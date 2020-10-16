@@ -4,6 +4,7 @@ int echoPin=2;
 double vspeed;
 double old_distance;
 int n;
+long t = 0;
 void setup() {
 n = 0;
 vspeed=0.0;
@@ -31,9 +32,7 @@ void loop() {
       n=0;
      old_distance= distance;
       }
-  
-  Serial.println("Distance:" + String(dis) + "#Speed:" + String(vspeed) + "#n:" + String(n));
-  Serial1.println("Distance:" + String(dis) + "#Speed:" + String(vspeed) + "#n:" + String(n));
-
-
+  t = millis();
+  Serial.println("Distance:" + String(dis) + "#Speed:" + String(vspeed) + "#t:" + String(t) + "#n:" + String(n));
+  Serial1.println("Distance:" + String(dis) + "#Speed:" + String(vspeed) + "#t:" + String(t) + "#n:" + String(n));
 }
